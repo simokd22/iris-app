@@ -7,7 +7,7 @@ import altair as alt
 df = pd.read_csv('iris.csv', delimiter=',')
 
 # Set page title
-st.title('ISJM BI - Iris Dataset Explorer')
+st.title('ISJM BI - Exploration des données des Iris')
 
 st.header('Pré-analysevisuelles données données des Iris')  # On définit l'en-tête d'une section
 
@@ -15,7 +15,7 @@ st.header('Pré-analysevisuelles données données des Iris')  # On définit l'e
 # Afficher les premières lignes des données chargées data
 #st.write(df.head())
 	
-st.subheader('Subsection: Pie Chart Analysis')  # Sets a subheader for a subsection
+st.subheader('Description des données')  # Sets a subheader for a subsection
 
 # Show Dataset
 if st.checkbox("Preview DataFrame"):

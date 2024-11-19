@@ -19,7 +19,7 @@ st.header('Pré-analyse visuelles données données des Iris TP1')  # On défini
 st.subheader('Description des données')  # Sets a subheader for a subsection
 
 # Show Dataset
-if st.checkbox("Preview DataFrame"):
+if st.checkbox("Boutons de prévisualisation du DataFrame"):
 	if st.button("Head"):
 		st.write(df.head(2))
 	if st.button("Tail"):

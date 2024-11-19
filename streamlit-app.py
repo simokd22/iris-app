@@ -9,7 +9,7 @@ df = pd.read_csv('iris.csv', delimiter=',')
 # Set page title
 st.title('ISJM BI - Exploration des données des Iris')
 
-st.header('Pré-analysevisuelles données données des Iris')  # On définit l'en-tête d'une section
+st.header('Pré-analyse visuelles données données des Iris TP1')  # On définit l'en-tête d'une section
 
 
 # Afficher les premières lignes des données chargées data
@@ -23,7 +23,7 @@ if st.checkbox("Preview DataFrame"):
 		st.write(df.head(2))
 	if st.button("Tail"):
 		st.write(df.tail())
-	if st.button("Info"):
+	if st.button("Infos"):
 		st.write(df.info())
 	if st.button("Shape"):
 		st.write(df.shape)
@@ -50,8 +50,8 @@ if st.checkbox("Simple Correlation Plot with Matplotlib "):
 # About
 
 if st.button("About App"):
-	st.subheader("Iris Dataset EDA App")
-	st.text("Built with Streamlit")
+	st.subheader("App d'exploration des données des Iris")
+	st.text("Contruite avec Streamlit")
 	st.text("Thanks to the Streamlit Team Amazing Work")
 
 if st.checkbox("By"):

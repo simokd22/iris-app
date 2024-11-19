@@ -20,9 +20,11 @@ st.subheader('Description des données')  # Sets a subheader for a subsection
 # Show Dataset
 if st.checkbox("Preview DataFrame"):
 	if st.button("Head"):
-		st.write(df.head())
+		st.write(df.head(2))
 	if st.button("Tail"):
 		st.write(df.tail())
+	if st.button("Shape"):
+		st.write(df.shape())
 	else:
 		st.write(df.head(2))
 

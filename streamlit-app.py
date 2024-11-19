@@ -36,7 +36,7 @@ if st.checkbox("Boutons de prévisualisation du DataFrame"):
 chart = alt.Chart(df).mark_point().encode(
     x='petal_length',
     y='petal_width',
-    color=["#ff2b2b", "#faca2b", "#09ab3b"]
+    color=["#ff2b2b", "#faca2b", "#09ab3b"],
 )
 
 # Display chart

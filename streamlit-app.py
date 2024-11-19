@@ -7,10 +7,10 @@ import altair as alt
 df = pd.read_csv('https://gist.githubusercontent.com/netj/8836201/raw/6f9306ad21398ea43cba4f7d537619d0e07d5ae3/iris.csv', delimiter=',')
 
 # Set page title
-st.title('Iris Dataset Explorer')
+st.title('ISJM BI - Iris Dataset Explorer')
 
 # Display data
-st.write(df)
+st.write(df.head())
 
 # Show Dataset
 if st.checkbox("Preview DataFrame"):

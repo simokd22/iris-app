@@ -2,6 +2,7 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
+import seaborn as sn
 
 # Load data
 df = pd.read_csv('iris.csv', delimiter=',')

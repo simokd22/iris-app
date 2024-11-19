@@ -1,5 +1,5 @@
 # Import the required packages
-pip install seaborn
+!pip install seaborn
 import streamlit as st
 import pandas as pd
 import altair as alt

@@ -36,7 +36,8 @@ if st.checkbox("Boutons de prévisualisation du DataFrame"):
 chart = alt.Chart(df).mark_point().encode(
     x='petal_length',
     y='petal_width',
-    color='species'
+#    color='species'
+    color=["#FF0000", "#0000FF", "#00FF00"]
 )
 
 # Display chart
@@ -48,7 +49,7 @@ if st.checkbox("Simple Correlation Plot with Matplotlib "):
 	st.pyplot()
 
 # Show Plots
-if st.checkbox("Bar Plot of Groups or Counts"):
+if st.checkbox("Diagramme en barres groupées"):
 	#data = explore_data(my_dataset)
 	v_counts = df.groupby('species')
 	st.bar_chart(v_counts)

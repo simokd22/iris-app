@@ -1,6 +1,7 @@
 # Import the required packages
 import streamlit as st
 import pandas as pd
+import seaborn as sn
 import altair as alt
 
 # Load data
@@ -39,3 +40,17 @@ chart = alt.Chart(df).mark_point().encode(
 
 # Display chart
 st.write(chart)
+
+
+sn.pairplot(dataset, hue="variety")
+
+# About
+
+if st.button("About App"):
+	st.subheader("Iris Dataset EDA App")
+	st.text("Built with Streamlit")
+	st.text("Thanks to the Streamlit Team Amazing Work")
+
+if st.checkbox("By"):
+	st.text("Jesse E.Agbe(JCharis)")
+	st.text("Jesus Saves@JCharisTech")

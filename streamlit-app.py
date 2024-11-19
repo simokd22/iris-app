@@ -1,7 +1,6 @@
 # Import the required packages
 import streamlit as st
 import pandas as pd
-import seaborn as sn
 import altair as alt
 
 # Load data
@@ -41,7 +40,7 @@ chart = alt.Chart(df).mark_point().encode(
 # Display chart
 st.write(chart)
 
-
+import seaborn as sn
 sn.pairplot(dataset, hue="variety")
 
 # About

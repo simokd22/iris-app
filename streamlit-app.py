@@ -15,7 +15,7 @@ st.header('Iris Data pre-visualization Section')  # Sets a header for a section
 # Display data
 st.write(df.head())
 
-my_dataset='iris.csv'
+my_dataset="iris.csv"
 
 # To Improve speed and cache data
 @st.cache(persist=True)
@@ -61,5 +61,5 @@ if st.button("About App"):
 	st.text("Thanks to the Streamlit Team Amazing Work")
 
 if st.checkbox("By"):
-	st.text("Jesse E.Agbe(JCharis)")
-	st.text("Jesus Saves@JCharisTech")
+	st.text("Stéphane C. K. Tékouabou")
+	st.text("ctekouaboukoumetio@gmail.com")

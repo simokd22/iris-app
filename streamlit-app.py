@@ -17,6 +17,12 @@ st.write(df.head())
 
 my_dataset='iris.csv'
 
+# To Improve speed and cache data
+@st.cache(persist=True)
+def explore_data(dataset):
+	df = pd.read_csv(os.path.join(dataset))
+	return df 
+	
 st.subheader('Subsection: Pie Chart Analysis')  # Sets a subheader for a subsection
 
 # Show Dataset

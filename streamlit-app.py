@@ -9,7 +9,7 @@ df = pd.read_csv('iris.csv', delimiter=',')
 # Set page title
 st.title('ISJM BI - Iris Dataset Explorer')
 
-st.header('Pré-analysevisuelles données données d'Iris')  # On définit l'en-tête d'une section
+st.header('Pré-analysevisuelles données données des Iris')  # On définit l'en-tête d'une section
 
 
 # Afficher les premières lignes des données chargées data

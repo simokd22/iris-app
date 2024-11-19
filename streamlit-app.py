@@ -37,7 +37,7 @@ chart = alt.Chart(df).mark_point().encode(
     x='petal_length',
     y='petal_width',
 #    color='species'
-    color=["#FF0000", "#0000FF", "#00FF00"]
+    color=["#ff2b2b", "#faca2b", "#09ab3b"]
 )
 
 # Display chart

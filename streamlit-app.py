@@ -12,6 +12,8 @@ st.title('ISJM BI - Iris Dataset Explorer')
 # Display data
 st.write(df.head())
 
+my_dataset='iris.csv'
+
 # Show Dataset
 if st.checkbox("Preview DataFrame"):
 	data = explore_data(my_dataset)

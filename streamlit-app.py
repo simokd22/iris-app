@@ -47,6 +47,11 @@ if st.checkbox("Simple Correlation Plot with Matplotlib "):
 	plt.matshow(df.corr())
 	st.pyplot()
 
+# Show Plots
+if st.checkbox("Bar Plot of Groups or Counts"):
+	#data = explore_data(my_dataset)
+	v_counts = df.groupby('species')
+	st.bar_chart(v_counts)
 
 # About
 

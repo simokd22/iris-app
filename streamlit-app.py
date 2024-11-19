@@ -40,9 +40,12 @@ chart = alt.Chart(df).mark_point().encode(
 # Display chart
 st.write(chart)
 
-import seaborn as sn
-plot=sn.pairplot(df, hue="species")
-st.pyplot(plot.fig)
+# Show Plots
+if st.checkbox("Simple Correlation Plot with Matplotlib "):
+	data = explore_data(my_dataset)
+	plt.matshow(data.corr())
+	st.pyplot()
+
 
 # About
 

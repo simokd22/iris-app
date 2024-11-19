@@ -9,11 +9,11 @@ df = pd.read_csv('iris.csv', delimiter=',')
 # Set page title
 st.title('ISJM BI - Iris Dataset Explorer')
 
-st.header('Iris Data pre-visualization Section')  # Sets a header for a section
+st.header('Pré-analysevisuelles données données d'Iris')  # On définit l'en-tête d'une section
 
 
-# Display data
-st.write(df.head())
+# Afficher les premières lignes des données chargées data
+#st.write(df.head())
 	
 st.subheader('Subsection: Pie Chart Analysis')  # Sets a subheader for a subsection
 
@@ -30,7 +30,7 @@ if st.checkbox("Preview DataFrame"):
 # Create chart
 chart = alt.Chart(df).mark_point().encode(
     x='petal_length',
-    y='sepal_width',
+    y='petal_width',
     color='species'
 )
 

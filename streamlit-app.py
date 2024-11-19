@@ -47,7 +47,7 @@ chart2 = alt.Chart(df).mark_circle(size=60).encode(
     x='sepalLength',
     y='sepalWidth',
     color='species',
-    tooltip=['sepalLength', 'sepalWidth', 'petalLength', 'petalWidth']
+    tooltip=['sepal_length', 'sepal_width', 'petal_length', 'petal_width']
 ).interactive()
 
 st.write(chart2)

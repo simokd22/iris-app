@@ -41,7 +41,8 @@ chart = alt.Chart(df).mark_point().encode(
 st.write(chart)
 
 import seaborn as sn
-sn.pairplot(dataset, hue="variety")
+plot=sn.pairplot(df, hue="species")
+st.pyplot(plot.fig)
 
 # About
 

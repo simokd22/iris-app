@@ -1,8 +1,9 @@
 # Import the required packages
+pip install seaborn
 import streamlit as st
 import pandas as pd
 import altair as alt
-import seaborn as sns
+#import seaborn as sns
 
 # Load data
 df = pd.read_csv('iris.csv', delimiter=',')
@@ -37,8 +38,6 @@ chart = alt.Chart(df).mark_point().encode(
     x='petal_length',
     y='petal_width',
     color="species"
-).facet(
-    column='species'
 )
 
 # Display chart

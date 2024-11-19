@@ -5,6 +5,17 @@ import pandas as pd
 import altair as alt
 #import seaborn as sns
 
+# Page configuration
+st.set_page_config(
+    page_title="Iris Classification", 
+    page_icon="assets/icon/icon.png",
+    layout="wide",
+    initial_sidebar_state="expanded")
+
+alt.themes.enable("dark")
+
+# -------------------------
+
 # Load data
 df = pd.read_csv('iris.csv', delimiter=',')
 

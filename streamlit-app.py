@@ -12,6 +12,16 @@ st.title('Iris Dataset Explorer')
 # Display data
 st.write(df)
 
+# Show Dataset
+if st.checkbox("Preview DataFrame"):
+	data = explore_data(df)
+	if st.button("Head"):
+		st.write(data.head())
+	if st.button("Tail"):
+		st.write(data.tail())
+	else:
+		st.write(data.head(2))
+
 # Create chart
 chart = alt.Chart(df).mark_point().encode(
     x='petal.length',

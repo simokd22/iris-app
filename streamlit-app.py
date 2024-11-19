@@ -23,8 +23,10 @@ if st.checkbox("Preview DataFrame"):
 		st.write(df.head(2))
 	if st.button("Tail"):
 		st.write(df.tail())
+	if st.button("Info"):
+		st.write(df.info())
 	if st.button("Shape"):
-		st.write(df.shape())
+		st.write(df.shape)
 	else:
 		st.write(df.head(2))
 

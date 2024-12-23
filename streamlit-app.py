@@ -3,7 +3,10 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 import sklearn
-import joblib  # For saving and loading the model
+import joblib 
+from sklearn import datasets
+from sklearn.ensemble import RandomForestClassifier
+# For saving and loading the model
 
 
 # Configure the Streamlit app

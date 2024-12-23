@@ -67,17 +67,49 @@ elif st.session_state.page_selection == 'dataset':
 
 elif st.session_state.page_selection == 'eda':
     st.title('Exploratory Data Analysis')
+    
+    # Data Description
     st.subheader('Data Description')
     st.write(df.describe())
-    st.subheader('Correlation Matrix')
-    st.write(df.corr())
+    
+    # Correlation Matrix
+    st.subheader('Correlation Matrix (Numeric Columns)')
+    numeric_df = df.select_dtypes(include=['float64', 'int64'])
+    if not numeric_df.empty:
+        st.write(numeric_df.corr())
+    else:
+        st.write("No numeric columns available for correlation matrix.")
+    
+    # Charts
     st.subheader('Charts')
+    st.markdown("### Petal Length vs Petal Width (by Species)")
     chart = alt.Chart(df).mark_point().encode(
         x='petal_length',
         y='petal_width',
-        color="species"
+        color='species',
+        tooltip=['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
     )
     st.altair_chart(chart, use_container_width=True)
+    
+    st.markdown("### Sepal Length vs Sepal Width (Interactive)")
+    chart2 = alt.Chart(df).mark_circle(size=60).encode(
+        x='sepal_length',
+        y='sepal_width',
+        color='species',
+        tooltip=['sepal_length', 'sepal_width', 'petal_length', 'petal_width', 'species']
+    ).interactive()
+    st.altair_chart(chart2, use_container_width=True)
+
+    # Slider for filtering rows
+    st.subheader("Filter Rows by Sepal Length")
+    min_sepal_length, max_sepal_length = st.slider(
+        "Select range of Sepal Length", 
+        float(df["sepal_length"].min()), 
+        float(df["sepal_length"].max()), 
+        (float(df["sepal_length"].min()), float(df["sepal_length"].max()))
+    )
+    filtered_df = df[(df["sepal_length"] >= min_sepal_length) & (df["sepal_length"] <= max_sepal_length)]
+    st.write(filtered_df)
 
 elif st.session_state.page_selection == 'data_cleaning':
     st.title('Data Cleaning / Pre-processing')
@@ -87,12 +119,20 @@ elif st.session_state.page_selection == 'data_cleaning':
 elif st.session_state.page_selection == 'machine_learning':
     st.title('Machine Learning')
     st.write("This section will show machine learning model training and evaluation.")
-    # Add your machine learning model code here.
+    st.subheader("Set Train/Test Split Ratio")
+    train_test_ratio = st.slider("Train/Test Split", 0.1, 0.9, 0.8)
+    st.write(f"Training with {train_test_ratio*100}% of the data")
 
 elif st.session_state.page_selection == 'prediction':
     st.title('Prediction')
-    st.write("This section allows you to make predictions using the trained models.")
-    # Add your prediction logic here.
+    st.subheader("Input Features for Prediction")
+    sepal_length = st.slider("Sepal Length", float(df["sepal_length"].min()), float(df["sepal_length"].max()))
+    sepal_width = st.slider("Sepal Width", float(df["sepal_width"].min()), float(df["sepal_width"].max()))
+    petal_length = st.slider("Petal Length", float(df["petal_length"].min()), float(df["petal_length"].max()))
+    petal_width = st.slider("Petal Width", float(df["petal_width"].min()), float(df["petal_width"].max()))
+    
+    st.write(f"Predicting with inputs: [{sepal_length}, {sepal_width}, {petal_length}, {petal_width}]")
+    # Add your model prediction logic here.
 
 elif st.session_state.page_selection == 'conclusion':
     st.title('Conclusion')
@@ -102,7 +142,3 @@ elif st.session_state.page_selection == 'conclusion':
 st.sidebar.subheader("Contact")
 st.sidebar.text("Stéphane C. K. Tékouabou")
 st.sidebar.text("ctekouaboukoumetio@gmail.com")
-
-if st.checkbox("By"):
-	st.text("Stéphane C. K. Tékouabou")
-	st.text("ctekouaboukoumetio@gmail.com")
